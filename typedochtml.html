@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mon interface multi-fenêtres</title>
+  <link rel="stylesheet" href="ui/style.css">
+  <script src="ui/pdfjs/pdf.js"></script>
+  <script src="ui/main.js"></script>
+  <script src="ui/viewer.js"></script>
+  <script src="ui/tasks.js"></script>
+</head>
+
+<body>
+  <h1>Interface multi-fenêtres</h1>
+
+  <div id="container">
+    <div class="window" id="pdf-window"></div>
+    <div class="window" id="tasks-window"></div>
+    <div class="window" id="code-window"></div>
+  </div>
+
+  <script>
+    loadPDF("pdf/cours1.pdf");
+    loadTasks();
+    document.getElementById("code-window").innerHTML =
+      ocamlMain.hello();
+  </script>
+</body>
+</html>
